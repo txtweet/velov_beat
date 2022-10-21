@@ -1,0 +1,7 @@
+/.idea
+/build
+
+.DS_Store
+/velov_beat
+/velov_beat.test
+*.pyc
