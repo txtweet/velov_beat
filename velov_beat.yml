@@ -4,8 +4,12 @@
 
 velov_beat:
   # Defines how often an event is sent to the output
-  period: 1s
+  period: 120s
 
+setup.template.name: "velov_beat"
+setup.template.fields: "fields.yml"
+setup.template.overwrite: true
+logging.level: warning
 # ================================== General ===================================
 
 # The name of the shipper that publishes the network data. It can be used to group
@@ -70,7 +74,8 @@ setup.kibana:
 # ---------------------------- Elasticsearch Output ----------------------------
 output.elasticsearch:
   # Array of hosts to connect to.
-  hosts: ["localhost:9200"]
+  hosts: ["tc405-112-02.insa-lyon.fr:9400"]
+  allow_older_versions: true
 
   # Protocol - either `http` (default) or `https`.
   #protocol: "https"

@@ -10777,7 +10777,7 @@
   description: >
     Metadata from cloud providers added by the add_cloud_metadata processor.
   fields:
-    
+
     - name: cloud.image.id
       default_field: true
       example: ami-abcd1234
@@ -10827,7 +10827,7 @@
       path: cloud.region
       migration: true
 
-    
+
 - key: docker
   title: Docker
   description: >
@@ -11046,8 +11046,47 @@
   title: velov_beat
   description:
   fields:
-    - name: counter
-      type: long
-      required: true
-      description: >
-        PLEASE UPDATE DOCUMENTATION
+    - name: station
+      type: group
+      description: station data
+      fields:
+         - name: number
+           type: integer
+         - name: contractName
+           type: keyword
+         - name: name
+           type: keyword
+         - name: address
+           type: keyword
+         - name: location
+           type: geo_point
+         - name: banking
+           type: boolean
+         - name: status
+           type: keyword
+         - name: lastUpdate
+           type: date
+         - name: connected
+           type: boolean
+         - name: overflow
+           type: boolean
+         - name: stands
+           type: group
+           fields:
+             - name: capacity
+               type: integer
+             - name: availabilities
+               type: group
+               fields:
+                 - name: bikes
+                   type: integer
+                 - name: stands
+                   type: integer
+                 - name: mechanicalBikes
+                   type: integer
+                 - name: electricalBikes
+                   type: integer
+
+
+
+
